@@ -91,7 +91,7 @@ def convert_df(df: pd.DataFrame):
 if __name__ == '__main__':
 
     # App config setup
-    st.set_page_config(
+    st.set_page_config( 
         page_icon='assets/ethereum-name-service-ens-logo.png',
         page_title='Real-Time ENS Registrations',
         layout='wide'
@@ -102,7 +102,7 @@ if __name__ == '__main__':
                 unsafe_allow_html=True)
 
     # update every 5 mins
-    st_autorefresh(interval=1 * 60 * 1000, key="dataframerefresh")
+    st_autorefresh(interval=0.5 * 60 * 1000, key="dataframerefresh")
 
     # URL for ENS subgraph
     SUBGRAPH_URL = 'https://api.thegraph.com/subgraphs/name/ensdomains/ens'
@@ -163,4 +163,4 @@ if __name__ == '__main__':
                     file_name='ens_dataset.csv',
                     mime='text/csv',
                 )
-        st.caption('Refresh rate: `1 minute`')
+        st.caption('Refresh rate: `30 seconds`')
