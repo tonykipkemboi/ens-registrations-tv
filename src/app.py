@@ -154,7 +154,7 @@ if __name__ == '__main__':
             with tab3:
                 st.subheader('Download ENS Dataset')
                 st.write(
-                    ' ⚠️ *The data is limited to the 20 recent name registrations* ⚠️')
+                    ' ⚠️ *The data is limited to the 20 recent name registrations*')
                 csv = convert_df(final)
 
                 st.download_button(
