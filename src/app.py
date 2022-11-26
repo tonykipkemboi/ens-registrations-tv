@@ -122,7 +122,7 @@ if __name__ == '__main__':
             with tab1:
                 expander = st.expander("🚨 DISCLAIMER 🚨")
                 expander.write("""
-                🚩 *Some of the names being registered contain words or language that are considered `profane`, `vulgar`, or `offensive` by some* 
+                *Some of the names being registered contain words or language that is considered `profane`, `vulgar`, or `offensive` by some* 
                 """)
 
                 col1, col2, col3 = st.columns(3)
