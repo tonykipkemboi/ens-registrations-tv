@@ -92,14 +92,12 @@ if __name__ == '__main__':
 
     # App config setup
     st.set_page_config(
-        page_icon='../assets/ethereum-name-service-ens-logo.png',
+        page_icon='assets/ethereum-name-service-ens-logo.png',
         page_title='Real-Time ENS Registrations',
         layout='wide'
     )
 
     # App title
-    # _, x, _ = st.columns(3)
-    # with x:
     st.markdown("<h1 style='text-align: center; color: red;'>📺 ENS Registrations TV 📺</h1>",
                 unsafe_allow_html=True)
 
