@@ -11,5 +11,5 @@
 
 [![Portfolio App Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)][def]
 
-[def]: https://enstv.streamlit.app/
+[def]: https://ensregistrationstv.streamlit.app/
 
