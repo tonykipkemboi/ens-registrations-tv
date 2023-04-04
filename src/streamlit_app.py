@@ -133,7 +133,7 @@ if __name__ == '__main__':
                 col2.metric(label="Cost Ξ", value=final['Cost'][0].round(
                     decimals=4), delta=diff)
 
-                col3.metric("Owner 🧑‍🚀", value=final['Owner'][0][:8]+'...'+final['Owner'][0][:-4])
+                col3.metric("Owner 🧑‍🚀", value=final['Owner'][0][:8]+'...'+final['Owner'][0][-4:])
                 st.write('---')
                 st.subheader('Most recent registrations')
 
