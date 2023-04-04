@@ -48,7 +48,7 @@ def get_data(url: str) -> pd.DataFrame:
     ]
 
     df = sg.query_df(field_paths, pagination_strategy=ShallowStrategy)
-    # print(df.columns)
+    
     return df
 
 
@@ -79,8 +79,6 @@ def apply_edits(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-
-@st.cache
 def convert_df(df: pd.DataFrame):
     """"Takes df and returns it in csv for downloading"""
 
@@ -116,7 +114,7 @@ if __name__ == '__main__':
     with st.container():
         col1, col2, col3 = st.columns(3)
         tab1, tab2, tab3 = st.tabs(
-            ["Registrations", "Chart", "Download Data"])
+            ["✍🏾 Registrations", "📈 Chart", "📥 Download Data"])
 
         with col1:
             with tab1:
@@ -135,7 +133,7 @@ if __name__ == '__main__':
                 col2.metric(label="Cost Ξ", value=final['Cost'][0].round(
                     decimals=4), delta=diff)
 
-                col3.metric("Owner 🧑‍🚀", value=final['Owner'][0][:8]+'...')
+                col3.metric("Owner 🧑‍🚀", value=final['Owner'][0][:8]+'...'+final['Owner'][0][4:])
                 st.write('---')
                 st.subheader('Most recent registrations')
 
