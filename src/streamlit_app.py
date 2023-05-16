@@ -10,8 +10,14 @@ import streamlit as st
 
 
 def get_data(url: str) -> pd.DataFrame:
-    """Takes ENS subgraph URL and returns registrations data"""
+    """Fetches ENS registration data from a given subgraph URL.
 
+    Args:
+        url (str): The ENS subgraph URL.
+
+    Returns:
+        pd.DataFrame: The ENS registrations data as a pandas DataFrame.
+    """
     # Initialize subgrounds
     sg = Subgrounds()
     ens = sg.load_subgraph(url)
@@ -53,8 +59,14 @@ def get_data(url: str) -> pd.DataFrame:
 
 
 def apply_edits(df: pd.DataFrame) -> pd.DataFrame:
-    """Gets data from df and returns df"""
+    """Performs various transformations on the input DataFrame.
 
+    Args:
+        df (pd.DataFrame): Input DataFrame with raw ENS registrations data.
+
+    Returns:
+        pd.DataFrame: Transformed DataFrame with added and reformatted columns.
+    """
     # Add cost in Ether columns
     df['cost_in_ether'] = df['registrations_cost'] / (10**18)
 
@@ -79,9 +91,15 @@ def apply_edits(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-def convert_df(df: pd.DataFrame):
-    """"Takes df and returns it in csv for downloading"""
+def convert_df(df: pd.DataFrame) -> bytes:
+    """Converts the input DataFrame into a CSV format and encodes it.
 
+    Args:
+        df (pd.DataFrame): The input DataFrame.
+
+    Returns:
+        bytes: The encoded CSV data.
+    """
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
